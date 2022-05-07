@@ -21,18 +21,22 @@ resource "aws_subnet" "pub_subnet" {
 }
 resource "aws_subnet" "private_subnet_1a" {
 	vpc_id            = aws_vpc.mini_vpc.id
-	cidr_block        = "10.2.3.0/24"
-	availability_zone = "ap-northeast-1a"
+	cidr_block        = "10.0.2.0/24"
+	availability_zone = var.region
 
-	tags { Name = "Private Subnet 1A" }
+	tags { 
+    Name = "Private Subnet 1A" 
+  }
 }
 
-resource "aws_subnet" "application_private_1c" {
+resource "aws_subnet" "private_subnet_1b" {
 	vpc_id            = aws_vpc.mini_vpc.id
-	cidr_block        = "10.2.4.0/24"
-	availability_zone = "ap-northeast-1c"
+	cidr_block        = "10.0.3.0/24"
+	availability_zone = var.region
   
-  	tags { Name = "Private Subnet 1C" }
+  	tags { 
+      Name = "Private Subnet 1B" 
+    }
 }
 
 resource "aws_internet_gateway" "mini_igw" {
