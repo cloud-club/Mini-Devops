@@ -8,11 +8,17 @@ terraform {
 
   required_version = ">= 0.14.9"
 }
-# terraform settings, including the required providers 
-# terraform will use it to provision infrastructure
-
 
 provider "aws" {
   profile = "default"
   region = var.region
 }
+
+module "vpc" {
+  source = "./modules/vpc"
+}
+
+module "iam" {
+  source = "./modules/iam"
+}
+
