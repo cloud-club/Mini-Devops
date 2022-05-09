@@ -3,7 +3,8 @@
 ### ECS를 활용한 웹 어플리케이션 배포
 ---
 ### 1. Architecture
-![Untitled Diagram drawio (1)](https://user-images.githubusercontent.com/49158155/167415054-5693f60a-7ceb-4ff4-82d2-6933622dcb2e.png)
+![Untitled Diagram drawio (2)](https://user-images.githubusercontent.com/49158155/167415758-410ad8b6-786b-4572-a0c2-d21baac280b3.png)
+
 
 ### 2. Explanation
 1. VPC : public subnet, private subnet 2개, Nat Gateway
