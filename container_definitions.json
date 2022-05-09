@@ -1,0 +1,15 @@
+[{
+    "command": ["bundle", "exec", "rackup", "-p", "8080", "-E", "production"],
+    "cpu": 1024,
+  
+    "environment": [
+      { "name": "MESSAGE", "value": "Hello World!" }
+    ],
+  
+    "image": "채워야함",
+    "name": "mini_app",
+  
+    "portMappings": [
+      { "containerPort": 8080, "protocol": "tcp" }
+    ]
+  }]
