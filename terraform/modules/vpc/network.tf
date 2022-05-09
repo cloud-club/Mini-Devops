@@ -66,3 +66,37 @@ resource "aws_security_group" "mini_sg" {
 
   tags { Name = "Mini_Devops Security Group" }
 }
+
+resource "aws_eip" "mini_EIP" {
+  vpc   = true
+}
+
+resource "aws_nat_gateway" "mini_nat" {
+  allocation_id = aws_eip.EIP.id
+  subnet_id     = aws_subnet.pub_subnet
+
+  tags = {Name="mini-nat"}
+}
+
+
+resource "aws_route_table" "private_route_table" {
+  vpc_id = aws_vpc.mini_vpc
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.mini_nat.id
+  }
+
+  tags = {Name="mini-private-route-table"}
+}
+
+resource "aws_route_table_association" "private_routing_a" {
+  count = 1
+  route_table_id = aws_route_table.private_route_table
+  subnet_id      = aws_subnet.private_subnet_1a.id
+}
+
+resource "aws_route_table_association" "private_routing_b" {
+  count = 1
+  route_table_id = aws_route_table.private_route_table
+  subnet_id      = aws_subnet.private_subnet_1b.id
+}
