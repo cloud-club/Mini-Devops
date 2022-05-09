@@ -1,5 +1,5 @@
 # bastion instance를 위한 security group
-resource "aws_security_group" "mini-bastion-sg" {
+resource "aws_security_group" "mini_bastion_sg" {
   name = "mini-bastion"
   vpc_id = aws_vpc.mini_vpc.id
 
