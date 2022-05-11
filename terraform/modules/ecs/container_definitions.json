@@ -1,5 +1,5 @@
 {
-    "command": ["bundle", "exec", "rackup", "-p", "8080", "-E", "production"],
+    "command": ["bundle", "exec", "rackup", "-p", "8080"],
     "cpu": 1024,
   
     "environment": [
