@@ -22,6 +22,10 @@ resource "aws_lb_target_group" "mini_tg" {
   vpc_id   = var.vpc.id
   target_type = "ip"
 
+  lifecycle {
+    create_before_destroy = true
+  }
+  
   health_check {
     enabled             = true
     interval            = 300
