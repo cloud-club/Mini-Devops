@@ -17,7 +17,7 @@ resource "aws_lb" "mini_alb" {
 
 resource "aws_lb_target_group" "mini_tg" {
   name     = "mini-tg"
-  port     = 80
+  port     = 8080
   protocol = "HTTP"
   vpc_id   = var.vpc.id
   target_type = "ip"
