@@ -17,10 +17,10 @@ resource "aws_lb" "mini_alb" {
 
 resource "aws_lb_target_group" "mini_tg" {
   name     = "mini-tg"
-  port     = 8080
+  port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc.id
-  target_type = "ip"
+  target_type = "instance"
 
   lifecycle {
     create_before_destroy = true
