@@ -1,0 +1,15 @@
+[{
+    "command": ["bundle", "exec", "rackup", "-p", "8080", "-E", "production"],
+    "cpu": 1024,
+  
+    "environment": [
+      { "name": "MESSAGE", "value": "Hello World!" }
+    ],
+  
+    "image": "905797561233.dkr.ecr.ap-northeast-2.amazonaws.com/repo-ecs-tutorial",
+    "name": "mini_app",
+  
+    "portMappings": [
+      { "containerPort": 8080, "hostPort":8080, "protocol": "tcp"}
+    ]
+  }]
