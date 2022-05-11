@@ -1,4 +1,8 @@
 variable "region" {
-    description = "availability_zone"
+    description = "region"
     type        = string
+}
+
+variable "availability_zone"{
+    type    = list(string)
 }

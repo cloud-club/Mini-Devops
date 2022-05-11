@@ -3,11 +3,15 @@ variable "region" {
   default = "ap-northeast-2"
 }
 
+variable "availability_zone"{
+  type    = list(string)
+  default = ["ap-northeast-2a","ap-northeast-2c"]
+}
+
 variable "tag_name" {
   type    = string
   default = "service"
 }
-
 
 variable "container_port" {
   type    = number
