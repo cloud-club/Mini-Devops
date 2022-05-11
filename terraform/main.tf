@@ -16,6 +16,7 @@ provider "aws" {
 
 module "vpc" {
   source = "./modules/vpc"
+  region = var.region
 }
 
 module "iam" {
@@ -31,10 +32,13 @@ module "alb"{
 }
 
 module "ecs"{
+  source = "./modules/ecs"
 
 }
 
 module "ecr"{
+  source = "./modules/ecr"
+  ecr_name = "mini_ecr"
 
 }
 

@@ -1,6 +1,6 @@
 resource "aws_ecs_service" "mini_ecs_service" {
     cluster = aws_ecs_cluster.mini_cluster.id
-    depends_on = [ aws_iam_role_policy_attachment.ecs ]
+    depends_on = [ iam_role_policy_attachment.ecs ]
     desired_count = 1
     enable_ecs_managed_tags = true
     force_new_deployment = true
