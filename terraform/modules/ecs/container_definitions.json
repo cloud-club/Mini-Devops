@@ -1,4 +1,4 @@
-[{
+{
     "command": ["bundle", "exec", "rackup", "-p", "8080", "-E", "production"],
     "cpu": 1024,
   
@@ -12,4 +12,4 @@
     "portMappings": [
       { "containerPort": 8080, "hostPort":8080, "protocol": "tcp"}
     ]
-  }]
+  }
