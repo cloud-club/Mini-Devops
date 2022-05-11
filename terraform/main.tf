@@ -31,6 +31,11 @@ module "alb"{
   vpc = module.vpc.vpc
 }
 
+module "security_group"{
+  source = "./modules/security_group"
+  aws_lb = module.alb.aws_lb
+  aws_vpc = module.vpc.aws_vpc
+}
 module "ecs"{
   source = "./modules/ecs"
 

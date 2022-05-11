@@ -12,7 +12,7 @@ resource "aws_security_group" "ec2" {
     ingress {
         from_port = 0
         protocol = "tcp"
-        security_groups = [aws_security_group.alb.id]
+        security_groups = [aws_lb.mini-alb.id]
         to_port = 65535
     }
 
