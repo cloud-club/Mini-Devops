@@ -41,6 +41,7 @@ module "alb"{
 
 module "iam" {
   source = "./modules/iam"
+  elb = module.alb.alb
 }
 
 module "ecr"{
@@ -53,6 +54,8 @@ module "ecs"{
   ecr = module.ecr.ecr
   iam_role_policy_attachment = module.iam.iam_role_policy_attachment
   target_group = module.alb.ecs_target_group
-
+  ecs_subnet_a = module.vpc.private_subnet_a
+  ecs_subnet_b = module.vpc.private_subnet_b
+  ecs_sg = module.vpc.ecs_sg
 }
 

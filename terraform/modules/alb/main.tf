@@ -20,7 +20,7 @@ resource "aws_lb_target_group" "mini_tg" {
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc.id
-  target_type = "instance"
+  target_type = "ip"
 
   lifecycle {
     create_before_destroy = true
