@@ -1,4 +1,4 @@
-resource "aws_lb" "mini-alb" {
+resource "aws_lb" "mini_alb" {
   name               = "mini-alb"
   internal           = false
   load_balancer_type = "application"
@@ -15,7 +15,7 @@ resource "aws_lb" "mini-alb" {
   }
 }
 
-resource "aws_lb_target_group" "mini-tg" {
+resource "aws_lb_target_group" "mini_tg" {
   name     = "mini-tg"
   port     = 80
   protocol = "HTTP"
@@ -38,17 +38,12 @@ resource "aws_lb_target_group" "mini-tg" {
 }
 
 resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.mini-alb.arn
+  load_balancer_arn = aws_lb.mini_alb.arn
   port              = "80"
   protocol          = "HTTP"
 
   default_action {
-    type = "redirect"
-
-    redirect {
-      port        = "443"
-      protocol    = "HTTPS"
-      status_code = "HTTP_301"
-    }
+    type = "forward"
+    target_group_arn = aws_lb_target_group.mini_tg.arn
   }
 }
