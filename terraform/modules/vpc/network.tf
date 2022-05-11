@@ -22,7 +22,7 @@ resource "aws_subnet" "pub_subnet" {
 resource "aws_subnet" "private_subnet_1a" {
 	vpc_id            = aws_vpc.mini_vpc.id
 	cidr_block        = "10.0.2.0/24"
-	availability_zone = var.availability_zone[1]
+	availability_zone = var.availability_zone[0]
 
 	tags = { 
     Name = "Private Subnet 1A" 
