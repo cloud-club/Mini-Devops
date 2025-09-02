@@ -26,3 +26,6 @@
 7. ECR 
     - dockerfile을 저장할 용도, 레포지터리 생성
 
+
+
+<!-- Security scan triggered at 2025-09-02 16:17:03 -->
